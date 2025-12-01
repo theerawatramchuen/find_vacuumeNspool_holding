@@ -153,6 +153,6 @@ vacuume-spool/
 * Log rotation and management
 * Periodic system health checks
 
-__This document provides comprehensive guidance for deploying and maintaining the Vacuum and Spool Detection System. For technical support or customization requests, refer to the code comments and Ultralytics documentation.__
+_This document provides comprehensive guidance for deploying and maintaining the Vacuum and Spool Detection System. For technical support or customization requests, refer to the code comments and Ultralytics documentation._
 
 
