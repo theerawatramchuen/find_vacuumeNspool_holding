@@ -78,10 +78,10 @@ bash
 python find_vacuumeNspool_conf_single_cam.py
 ```
 ### 2. Runtime Controls
-'q' Key: Exit application gracefully
-Automatic Mode Detection: Single vs multi-camera mode auto-detected
+* **'q' Key** : Exit application gracefully
+* **Automatic Mode Detection** : Single vs multi-camera mode auto-detected
 
-3. Output Structure
+### 3. Output Structure
 ```
 vacuume-spool/
 ├── YYYYMMDD-HHMMSS-MS-O.jpg  # Original frame
@@ -89,101 +89,70 @@ vacuume-spool/
 ```
 ### Detection Logic
 ### Condition Validation Flow
-Frame Capture: Read frame from RTSP stream
-
-YOLO Inference: Detect objects with confidence filtering
-
-Overlap Detection: Check for specified object interactions
-
-Temporal Tracking: Monitor condition persistence over time
-
-Validation: Save evidence after validation period elapses
-
-Cleanup: Remove expired conditions from tracking
+1. Frame Capture: Read frame from RTSP stream
+2. YOLO Inference: Detect objects with confidence filtering
+3. Overlap Detection: Check for specified object interactions
+4. Temporal Tracking: Monitor condition persistence over time
+5. Validation: Save evidence after validation period elapses
+6. Cleanup: Remove expired conditions from tracking
 
 ### Object Interaction Rules
-Inside Detection: Complete containment of one bounding box within another
-
-Overlap Detection: IoU > 0.1 threshold
-
-Class Combinations: Specific class pairs trigger different conditions
+* Inside Detection: Complete containment of one bounding box within another
+* Overlap Detection: IoU > 0.1 threshold
+* Class Combinations: Specific class pairs trigger different conditions
 
 ### Class Reference
 ### DetailedRTSPYOLOInference
 ### Key Methods
-__init__(): Initialize detector with configuration
-
-process_detections(): Core detection and validation logic
-
-process_camera_stream(): Handle individual camera processing
-
-run(): Main execution loop
-
-calculate_iou(): Intersection over Union calculation
-
-is_inside_or_overlapping(): Spatial relationship detection
+* `__init__()` : Initialize detector with configuration
+* `process_detections()` : Core detection and validation logic
+* `process_camera_stream()` : Handle individual camera processing
+* `run()` : Main execution loop
+* `calculate_iou()` : Intersection over Union calculation
+* `is_inside_or_overlapping()` : Spatial relationship detection
 
 ### Internal Tracking
-condition_timestamps: Track when conditions first occurred
-
-validated_conditions: Track validated persistent conditions
-
-current_camera_index: Multi-camera rotation counter
+* `condition_timestamps` : Track when conditions first occurred
+* `validated_conditions` : Track validated persistent conditions
+* `current_camera_index` : Multi-camera rotation counter
 
 ### Performance Considerations
 ### Optimization Tips
-Confidence Threshold: Adjust based on model performance and false positive rate
-
-Validation Time: Increase to reduce false positives, decrease for faster response
-
-Frame Processing: Consider frame skipping for high-resolution streams
-
-Model Selection: Choose appropriate YOLO model size for hardware capabilities
+1. **Confidence Threshold** : Adjust based on model performance and false positive rate
+2. **Validation Time** : Increase to reduce false positives, decrease for faster response
+3. **Frame Processing** : Consider frame skipping for high-resolution streams
+4. **Model Selection** : Choose appropriate YOLO model size for hardware capabilities
 
 ### Troubleshooting
-Connection Issues: Verify RTSP URLs and network connectivity
-
-Model Loading: Check model path and compatibility
-
-Memory Management: Monitor RAM usage with multiple high-resolution streams
-
-File Permissions: Ensure write access to output directory
+* **Connection Issues** : Verify RTSP URLs and network connectivity
+* **Model Loading** : Check model path and compatibility
+* **Memory Management** : Monitor RAM usage with multiple high-resolution streams
+* **File Permissions** : Ensure write access to output directory
 
 ### Customization
 ### Adding New Detection Conditions
-Modify process_detections() method
-
-Add new class combination checks
-
-Implement appropriate tracking logic
-
-Update condition key generation
+1. Modify process_detections() method
+2. Add new class combination checks
+3. Implement appropriate tracking logic
+4. Update condition key generation
 
 ### Output Customization
-Modify generate_filename() for different naming conventions
-
-Extend saving logic for additional data formats
-
-Add database integration for event logging
+* Modify generate_filename() for different naming conventions
+* Extend saving logic for additional data formats
+* Add database integration for event logging
 
 ### Security Notes
-Secure storage of RTSP credentials
-
-File system permission management
-
-Network security for camera streams
-
-Regular updates for dependency vulnerabilities
+* Secure storage of RTSP credentials
+* File system permission management
+* Network security for camera streams
+* Regular updates for dependency vulnerabilities
 
 ### Maintenance
-Regular model retraining for improved accuracy
+* Regular model retraining for improved accuracy
+* Monitor storage capacity for saved images
+* Log rotation and management
+* Periodic system health checks
 
-Monitor storage capacity for saved images
-
-Log rotation and management
-
-Periodic system health checks
-
-This document provides comprehensive guidance for deploying and maintaining the Vacuum and Spool Detection System. For technical support or customization requests, refer to the code comments and Ultralytics documentation.
+__This document provides comprehensive guidance for deploying and maintaining the Vacuum and Spool Detection System. For technical support or customization requests, refer to the code comments and Ultralytics documentation.__
 
 
