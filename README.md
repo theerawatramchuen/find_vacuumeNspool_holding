@@ -17,41 +17,29 @@ The Vacuum and Spool Detection System is a real-time computer vision application
 * Intersection-over-Union (IoU): Advanced overlap detection algorithm
 
 ### 3. Evidence Collection
-Dual Image Saving: Saves both original and annotated detection frames
-
-Timestamped Filenaming: Files include precise timestamps with milliseconds
-
-Organized Storage: Automatic directory creation for output files
+* Dual Image Saving: Saves both original and annotated detection frames
+* Timestamped Filenaming: Files include precise timestamps with milliseconds
+* Organized Storage: Automatic directory creation for output files
 
 ### 4. Real-time Monitoring
-Live Display: Real-time video feed with detection overlays
-
-Performance Metrics: FPS counter and system status display
-
-Configurable Parameters: Adjustable confidence thresholds and detection settings
+* Live Display: Real-time video feed with detection overlays
+* Performance Metrics: FPS counter and system status display
+* Configurable Parameters: Adjustable confidence thresholds and detection settings
 
 ## System Requirements
 ## Hardware Requirements
-CPU: Multi-core processor recommended
+* CPU: Multi-core processor recommended
+* GPU: CUDA-capable GPU recommended for better performance
+* RAM: 8GB minimum, 16GB recommended
+* Storage: SSD recommended for faster file operations
+* Network: Stable network connection for RTSP streams
 
-GPU: CUDA-capable GPU recommended for better performance
-
-RAM: 8GB minimum, 16GB recommended
-
-Storage: SSD recommended for faster file operations
-
-Network: Stable network connection for RTSP streams
-
-Software Requirements
-Python: 3.7 or higher
-
-OpenCV: 4.5.0 or higher
-
-Ultralytics YOLO: Latest version
-
-Pandas: Data handling
-
-NumPy: Numerical operations
+## Software Requirements
+* Python: 3.7 or higher
+* OpenCV: 4.5.0 or higher
+* Ultralytics YOLO: Latest version
+* Pandas: Data handling
+* NumPy: Numerical operations
 
 ## Installation & Setup
 ### 1. Prerequisites Installation
@@ -60,15 +48,11 @@ bash
 pip install opencv-python pandas ultralytics numpy
 ```
 ### 2. Model Preparation
-Place trained YOLO model file (best.pt) in accessible directory
-
-Ensure model classes match expected detection classes
-
+* Place trained YOLO model file (best.pt) in accessible directory
+* Ensure model classes match expected detection classes
 ### 3. Camera Configuration
-Create CSV file with RTSP URLs (one per line, no header)
-
-Test RTSP connectivity before deployment
-
+* Create CSV file with RTSP URLs (one per line, no header)
+* Test RTSP connectivity before deployment
 ### Configuration Parameters
 ### Core Parameters in Main Block
 ```
@@ -80,17 +64,12 @@ LINE_THICKNESS = 1
 VALIDATION_TIME = 3  # seconds
 ```
 ### Class Initialization Parameters
-model_path: Path to YOLO model weights
-
-csv_file: CSV containing RTSP URLs
-
-inference_time: Camera rotation time (multi-camera mode)
-
-confidence_threshold: Minimum detection confidence (0.0-1.0)
-
-line_thickness: Bounding box thickness
-
-validation_time: Condition persistence time required for saving
+* `model_path`: Path to YOLO model weights
+* `csv_file`: CSV containing RTSP URLs
+* `inference_time`: Camera rotation time (multi-camera mode)
+* `confidence_threshold`: Minimum detection confidence (0.0-1.0)
+* `line_thickness`: Bounding box thickness
+* `validation_time`: Condition persistence time required for saving
 
 ### Usage Instructions
 ### 1. Basic Operation
@@ -100,7 +79,6 @@ python find_vacuumeNspool_conf_single_cam.py
 ```
 ### 2. Runtime Controls
 'q' Key: Exit application gracefully
-
 Automatic Mode Detection: Single vs multi-camera mode auto-detected
 
 3. Output Structure
