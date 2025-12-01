@@ -4,25 +4,16 @@ The Vacuum and Spool Detection System is a real-time computer vision application
 
 ## Key Features
 ### 1. Multi-Camera Support
-Single Camera Mode: Continuous monitoring of one camera stream
-
-Multi-Camera Mode: Automatic rotation between multiple cameras with configurable time intervals
-
-RTSP Stream Support: Compatible with various RTSP camera sources
-
+* Single Camera Mode: Continuous monitoring of one camera stream
+* Multi-Camera Mode: Automatic rotation between multiple cameras with configurable time intervals
+* RTSP Stream Support: Compatible with various RTSP camera sources
 ### 2. Intelligent Detection & Validation
 * YOLO Object Detection: Real-time object detection using Ultralytics YOLO
-
 * Three Detection Conditions:
-
 1. Vacuum inside/overlapping Normal area
-
 2. Vacuum inside/overlapping Suspected area
-
 3. Spool inside/overlapping Grove area
-
 * Temporal Validation: Conditions must persist for configurable time (default: 3 seconds) before triggering saves
-
 * Intersection-over-Union (IoU): Advanced overlap detection algorithm
 
 ### 3. Evidence Collection
