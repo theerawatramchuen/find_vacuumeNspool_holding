@@ -11,19 +11,19 @@ Multi-Camera Mode: Automatic rotation between multiple cameras with configurable
 RTSP Stream Support: Compatible with various RTSP camera sources
 
 ### 2. Intelligent Detection & Validation
-YOLO Object Detection: Real-time object detection using Ultralytics YOLO
+* YOLO Object Detection: Real-time object detection using Ultralytics YOLO
 
-Three Detection Conditions:
+* Three Detection Conditions:
 
-Vacuum inside/overlapping Normal area
+1. Vacuum inside/overlapping Normal area
 
-Vacuum inside/overlapping Suspected area
+2. Vacuum inside/overlapping Suspected area
 
-Spool inside/overlapping Grove area
+3. Spool inside/overlapping Grove area
 
-Temporal Validation: Conditions must persist for configurable time (default: 3 seconds) before triggering saves
+* Temporal Validation: Conditions must persist for configurable time (default: 3 seconds) before triggering saves
 
-Intersection-over-Union (IoU): Advanced overlap detection algorithm
+* Intersection-over-Union (IoU): Advanced overlap detection algorithm
 
 ### 3. Evidence Collection
 Dual Image Saving: Saves both original and annotated detection frames
