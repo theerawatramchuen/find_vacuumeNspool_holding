@@ -1,4 +1,4 @@
-## Vacuum and Spool Detection System - Application Document
+## Detection the Holding of Vacuume Cleaner and Spool - Application Document
 ### Overview
 The Vacuum and Spool Detection System is a real-time computer vision application that uses YOLO object detection to monitor RTSP camera streams for specific object interaction conditions. The system detects and validates overlapping conditions between vacuum/normal, vacuum/suspected, and spool/grove objects, saving evidence when conditions persist for a configured validation period.
 
